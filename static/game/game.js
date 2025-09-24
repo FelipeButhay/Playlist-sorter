@@ -18,10 +18,8 @@ function updateVolume() {
     }
 }
 
-// Inicializamos
 updateVolume();
 
-// Actualizamos al mover
 slider.addEventListener("input", function() {
     updateVolume();
 });
@@ -110,10 +108,6 @@ const   song_span_B = document.querySelector("#side-B   .song");
 const  album_span_B = document.querySelector("#side-B  .album");
 const   info_span_B = document.querySelector("#side-B   .info");
 
-// let track_times = {};
-// track_times["A"] = 0;
-// track_times["B"] = 0;
-
 function loadA(respA) {
     image_A.src = respA.img_url;
     artist_span_A.textContent = respA.artist;
@@ -146,11 +140,6 @@ fetch(`/game/start`)
 
         loadA(resp.A);
         loadB(resp.B);
-
-        // document.querySelectorAll("span.artist").forEach(span => { span.style.fontSize = "5vh"; });
-        // document.querySelectorAll(  "span.song").forEach(span => { span.style.fontSize = "7vh"; });
-        // document.querySelectorAll( "span.album").forEach(span => { span.style.fontSize = "4vh"; });
-        // document.querySelectorAll(  "span.info").forEach(span => { span.style.fontSize = "2vh"; });
 
         spans.forEach(span => {
             span.dataset.fullText = span.textContent;
@@ -247,4 +236,5 @@ exitButton.addEventListener("click", () => {
 
             window.location.href = "/game/exit";
         });
+
 });
