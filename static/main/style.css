@@ -159,88 +159,6 @@ input#playlist-url[type="text"]:focus {
     text-align: center;
 }
 
-/* files */
-
-/*.data-container {
-    display: grid;
-    place-items: center;
-    padding: 3vh 4vh;
-    grid-template-columns: 5fr 2fr 3fr; 
-    grid-template-rows: 6vh 6vh;
-    gap: 4vh; 
-    position: relative;
-}
-
-.data-div {
-    position: relative;
-    padding: 2vh;
-    grid-column: 1 / 3;
-}
-
-.data-div#playlist {
-    grid-row: 1;
-}
-
-.data-div#partial {
-    grid-row: 2;
-}
-
-span.input-title {
-    margin: 0;
-    font-size: 4vh;
-    text-align: left;
-
-    position: relative;
-    right: 50%;
-    transform: translateX(50%);
-}
-
-span.input-status {
-    padding: 1.5vh;
-    font-size: 2vh;
-}*/
-
-/* submit playlist */
-
-/*input#playlist-url[type="text"] {
-  padding: 1.5vh 2vh;
-  border: 2px solid #1ED760;
-  border-radius: 1vh;
-  font-size: 1.8vh;
-  height: 100%;
-  width: 100%;
-  outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
-}
-
-input#playlist-url[type="text"]:focus {
-  border-color: #1db954;
-  box-shadow: 0 0 1.5vh rgba(30, 215, 96, 0.6);
-}*/
-
-/* sub file div*/
-
-/*.file-button {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.file-button label {
-    position: absolute;
-    font-size: 3vh;
-    background-color: rgb(30, 215, 96);
-    padding: 1vh;
-    border-radius: 4vh;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-.file-button label:hover {
-    background-color: rgb(19, 137, 60);
-} */
-
 /* PLAY BUTTON */
 
 .play-button-div {
@@ -278,4 +196,5 @@ input#playlist-url[type="text"]:focus {
 
 .play-button-div button:hover {
     background-color: rgb(19, 137, 60);
+
 }
