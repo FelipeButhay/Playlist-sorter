@@ -1,3 +1,4 @@
+// changes the span to inform the user if the playlist was created
 const response_span = document.querySelector("span.response");
 
 function turnToPlaylist() {
@@ -9,10 +10,12 @@ function turnToPlaylist() {
         });
 }
 
+// builds the list with the information from the server
 const list = document.querySelector("ol.list");
 
 for (const song of window.SONGS) {
     const new_li = document.createElement("li");
     new_li.textContent = song;
     list.appendChild(new_li);
+
 }
