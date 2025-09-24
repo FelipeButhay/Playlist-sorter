@@ -71,11 +71,10 @@ class Game:
             "release":  "/".join(track["album"]["release_date"].split("-")[::-1]),
             "duration": int(track["duration_ms"] / 1000 + 0.5),
             "img_url":  track["album"]["images"][0]["url"],
-          # "preview":  track["preview_url"] NIIIGER, NO EXISTE EL FUCKING PREVIEW
         }
     
     @ensure_token
-    def get_initials(self) -> dict[dict]: # two dictonaries, one for each song
+    def get_initials(self) -> dict[dict]:
         if self.file_loaded:
             self.sides["A"] = self.get_song_data(self.sides["A"]["id"])
             self.sides["B"] = self.get_song_data(self.sides["B"]["id"])
@@ -98,7 +97,7 @@ class Game:
         return self.sides
         
     @ensure_token
-    def user_chose(self, side: str): # side = A | B
+    def user_chose(self, side: str):
         fixed_side = side if self.n_comp%2 == 0 else get_opp(side)
 
         if fixed_side == "A":
@@ -225,7 +224,7 @@ class Game:
             playlist = self.sp.user_playlist_create(
                 user=user_id,
                 name=f"{playlist_name} (sorted)",
-                public=False,   # True si querés que sea pública
+                public=False,
                 description=f"This is the full {playlist_name} playlist ranked from best to worst"
             )
     
@@ -287,3 +286,4 @@ class Game:
         shuffle(self.initial_arr)
             
         return True
+
