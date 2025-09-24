@@ -47,9 +47,6 @@ class Game:
         self.left = None
         self.right = None
         self.mid = None
-
-        # client_credentials_manager = SpotifyClientCredentials(client_id=config.CLIENT_ID, client_secret=config.CLIENT_SECRET)
-        # self.sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager) 
         
         self.sp = None
         self.file_loaded = False
@@ -151,30 +148,15 @@ class Game:
     def pause(self):
         self.sp.pause_playback()
     
-    # def get_token(self):
-    #     auth_str = f"{self._CLIENT_ID}:{self._CLIENT_SECRET}"
-    #     b64_auth = base64.b64encode(auth_str.encode()).decode()
-
-    #     res = requests.post(
-    #         "https://accounts.spotify.com/api/token",
-    #         headers={
-    #             "Authorization": f"Basic {b64_auth}",
-    #             "Content-Type": "application/x-www-form-urlencoded"
-    #         },
-    #         data={"grant_type": "client_credentials"}
-    #     )
-
-    #     return res.json()["access_token"]
-    
     @ensure_token
     def get_backup_json(self):
         playlist_name = self.sp.playlist(self.playlist_id)["name"]
-        progress = f"{len(self.sorted_songs)}/{len(self.initial_arr)}"
+        progress = f"{len(self.sorted_songs)} out of {len(self.initial_arr)}"
         
         gmt = time.gmtime()
-        date = f"{gmt.tm_mday}/{gmt.tm_mon}/{gmt.tm_year}-{gmt.tm_hour}-{gmt.tm_min}-{gmt.tm_sec}"
+        date = f"{gmt.tm_mday}-{gmt.tm_mon}-{gmt.tm_year}_{gmt.tm_hour};{gmt.tm_min};{gmt.tm_sec}"
         
-        file_name = f"backup_{playlist_name}_{progress}_{date}.json"
+        file_name = f"backup_{playlist_name}_({progress})_{date}.json"
         
         return file_name, dict({
             "iter": self.iter,
@@ -228,9 +210,9 @@ class Game:
         playlist_name = self.sp.playlist(self.playlist_id)["name"]
         
         gmt = time.gmtime()
-        date = f"{gmt.tm_mday}/{gmt.tm_mon}/{gmt.tm_year}-{gmt.tm_hour}-{gmt.tm_min}-{gmt.tm_sec}"
+        date = f"{gmt.tm_mday}-{gmt.tm_mon}-{gmt.tm_year}_{gmt.tm_hour};{gmt.tm_min};{gmt.tm_sec}"
         
-        file_name = f"{playlist_name}_sorted_{date}.txt"
+        file_name = f"{playlist_name}(sorted)_{date}.txt"
         
         return file_name, "\n".join(self.get_sorted_list_names())
         
@@ -303,7 +285,5 @@ class Game:
             return False
             
         shuffle(self.initial_arr)
-        # with open(f"{config.UPLOAD_FOLDER}/playlsit.txt", "w", encoding="utf-8") as file:
-        #     file.write("\n".join(self.initial_arr))
             
         return True
