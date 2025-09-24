@@ -4,7 +4,6 @@
         <title>What do you prefer?</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/style.css') }}">
-        <!-- href="{{ url_for('static', filename='main/style.css') }}" -->
     </head>
     <body>
         <div class="title">
@@ -21,22 +20,6 @@
         </div>
 
         <form method="post" enctype="multipart/form-data">
-            <!--div class="data-container">
-                <span class="input-title">
-                    > Here you submit the spotify playlist</span>
-                <input type="text" id="playlist-url" name="playlist_url" placeholder="https://open.spotify.com/playlist/..." required>
-                <span class="input-status" id="playlist-name">No playlist selected</span>
-
-                <span class="input-title">
-                    > Here you can submit the backup json</span>
-                <div class="file-button">
-                    <input type="file" name="partial-list-file" id="partial-file" hidden accept=".json">
-                    <label for="partial-file">Select File</label>
-                </div>
-                <span class="input-status" id="filename-partial">No file selected</span>
-                </div>
-            </div-->
-
             <div class="data-container">
                 <div class="playlist-input">
                     <input type="text" id="playlist-url" name="playlist_url" placeholder="https://open.spotify.com/playlist/..." required>
@@ -55,6 +38,6 @@
             </div>
         </form>
         <script src="{{ url_for('static', filename='main/script.js') }}"></script>
-        <!-- src="{{ url_for('static', filename='main/script.js') }}" -->
     </body>
+
 </html>
