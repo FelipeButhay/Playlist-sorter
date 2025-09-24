@@ -4,7 +4,6 @@ import re
 import config
 import requests
 import time
-from requests.auth import HTTPBasicAuth
 import os
 import io
 import json
@@ -62,7 +61,6 @@ def callback():
     if code is None:
         return "Error: no se recibió 'code'", 500
 
-    # Pedimos el access token
     token_url = "https://accounts.spotify.com/api/token"
     payload = {
         "grant_type": "authorization_code",
