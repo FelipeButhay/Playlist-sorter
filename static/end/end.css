@@ -68,7 +68,7 @@ li::before {
     padding-left: 1.5vh;
     position: absolute;
     left: 0;
-    width: 2em; /* ancho fijo para todos los números */
+    width: 2em;
     text-align: right;
 }
 
@@ -134,3 +134,4 @@ span.response {
     display: block;
     font-size: 1.5vh;
 }
+
