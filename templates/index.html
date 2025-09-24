@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What do you prefer?</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/style.css') }}">
+        <!-- href="{{ url_for('static', filename='main/style.css') }}" -->
+    </head>
+    <body>
+        <div class="title">
+            <h2>WHAT DO YOU PREFER?</h2>
+            <h1>SONGS GAME</h1>
+        </div>
+
+        <div class="type-selector-container">
+            <div class="type-selector">
+                <div class="selector"></div>
+                <div class="types" id="playlist" data-selected="true">Playlist</div>
+                <div class="types" id="file" data-selected="false">File</div>
+            </div> 
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            <!--div class="data-container">
+                <span class="input-title">
+                    > Here you submit the spotify playlist</span>
+                <input type="text" id="playlist-url" name="playlist_url" placeholder="https://open.spotify.com/playlist/..." required>
+                <span class="input-status" id="playlist-name">No playlist selected</span>
+
+                <span class="input-title">
+                    > Here you can submit the backup json</span>
+                <div class="file-button">
+                    <input type="file" name="partial-list-file" id="partial-file" hidden accept=".json">
+                    <label for="partial-file">Select File</label>
+                </div>
+                <span class="input-status" id="filename-partial">No file selected</span>
+                </div>
+            </div-->
+
+            <div class="data-container">
+                <div class="playlist-input">
+                    <input type="text" id="playlist-url" name="playlist_url" placeholder="https://open.spotify.com/playlist/..." required>
+                </div>
+
+                <div class="backup-input hidden">
+                    <input type="file" name="backup-file" id="backup-file" hidden accept=".json">
+                    <label for="backup-file">Select File</label>
+                    <span class="input-status" id="backup-filename">No file selected</span>  
+                </div>
+            </div>
+        
+            <div class="play-button-div">
+                <h3>LET'S PLAY!</h3>
+                <button type="submit">START</button>
+            </div>
+        </form>
+        <script src="{{ url_for('static', filename='main/script.js') }}"></script>
+        <!-- src="{{ url_for('static', filename='main/script.js') }}" -->
+    </body>
+</html>

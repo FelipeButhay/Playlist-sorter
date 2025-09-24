@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; 
+    color: white;
+    margin: 0;
+}
+
+/* NAV */
+
+nav {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 2vh;
+    height: 10vh;
+    background-color: rgb(20,20,20);
+}
+
+nav .volume{
+    position: relative;
+    display: inline-block;
+    width: 26vh;
+    height: 6vh;
+}
+
+nav .volume #v-logo {
+    display: inline-block;
+    height: 6vh;
+    width:  6vh;
+}
+
+nav .volume input {
+    -webkit-appearance: none;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 18vh;
+    height: 1vh;
+    border-radius: 0.5vh;
+    transform: translateY(-50%);
+    right: 1vh;
+    background: red;
+}
+
+nav .volume input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 2vh;
+    height: 2vh;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+nav button {
+    position: absolute;
+    right: 2vh;
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 6vh;
+    width: 24vw;
+    border-radius: 3vh;
+
+    background-color: rgb(40, 40, 40);
+
+    font-size: 3vh;
+    font-family: Lexend;
+    color: rgb(30, 215, 96);
+
+    border: 0;
+}
+
+nav #volume-icon {
+    position: relative;
+    height: 6vh;
+    width: 6vh;
+}
+
+nav #volume-icon use {
+    position: absolute;
+    left: 0;
+}
+
+nav button:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+/* MAIN */
+
+main {
+    height: calc(100vh - 10vh);
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.side {
+    position: relative;
+    flex: 1;
+    height: 90vh;
+    width: 50vw;
+}
+
+.side img {
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+
+/* song data */
+
+.side .song-data {
+    visibility: hidden;
+    
+    display: flex;
+    z-index: 90;
+    height: 65%;
+    width: 55%;
+    padding: 6vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    box-sizing: content-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.side:hover .song-data {
+    visibility: visible;
+}
+
+.side span {
+    font-family: "Lexend";
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.side span.artist {
+    font-size: 5vh;
+}
+
+.side span.song {
+    color: rgb(30, 215, 96);
+    font-size: 7vh;
+}
+
+.side span.album {
+    font-size: 4vh;
+}
+
+.side span.info {
+    font-size: 2vh;
+}
+
+/* audio play coso */
+
+.audio-play {
+    bottom: 6vh;
+    position: absolute;
+    height: 20vh;
+    width: 20vh;
+    padding: 4vh;
+    border-radius: 10vh;
+
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.rec {
+    width: 2vh;
+    margin: 1vh;
+    bottom: 0;
+    animation: oscillate 2s ease infinite;
+    background-color: rgb(30, 215, 96);
+}
+
+.rec1 { animation-delay: 0.00s; }
+.rec3 { animation-delay: 0.66s; }
+.rec2 { animation-delay: 1.33s; }
+
+@keyframes oscillate {
+      0% {height: 10vh;}
+     50% {height: 2vh;}
+    100% {height: 10vh;}
+}
+
+/* center */
+
+#center-or {
+    z-index: 100;
+    position: absolute;
+    background-color: white;
+    color:black;
+    height: 16vh;
+    width: 16vh;
+    border-radius: 8vh;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#center-or span {
+    font-family: "Oswald";
+    position: absolute;
+    font-size: 9vh;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    background-color: black;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; 
+    color: white;
+    margin: 0;
+    max-height: 100%;
+}
+
+.title {
+    padding-top: 3vh;
+    margin-bottom: 4vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100vw;
+    height: 34vh;
+}
+
+/* what do you prefer */
+h2 {
+    margin: 0;
+    font-size: 8.5vh;
+    position: absolute;
+}
+
+/* the song game */
+h1 {
+    margin: 0;
+    font-size: 20vh;
+    position: absolute;
+    bottom: 0;
+    color: rgb(30, 215, 96);
+}
+
+/* type selector */
+
+.type-selector-container {
+    position: relative;
+    height: 10vh;
+    width: 100%;
+}
+
+.type-selector{
+    position: absolute;
+    height: 100%;
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+
+    background-color: rgb(70,70,70);
+    border-radius: 5vh;
+    cursor: pointer;
+}
+
+.type-selector .selector {
+    width: 50%;
+    height: 100%;
+    left: 0;
+    border-radius: 5vh;
+    background-color: #787878;
+    position: absolute;
+    transition: 0.5s ease;
+}
+
+.type-selector .types{
+    flex: 1; 
+    display: flex;
+    position: relative;                    
+    justify-content: center;
+    align-items: center;    
+    transition: 0.5s ease;
+    font-size: 4vh;
+}
+
+.type-selector .types[data-selected="true"] {
+    color: #1ED760;
+}
+
+/* inputs general */
+
+.data-container {
+    position: relative;
+    height: 12vh;
+    margin: 3vh 0;
+    width: 100%;
+}
+
+.backup-input {
+    height: 12vh;
+}
+
+.playlist-input {
+    height: 8vh;
+}
+
+.playlist-input, .backup-input {
+    position: absolute;
+    width: 30%;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hidden {
+    display: none;
+}
+
+input#playlist-url[type="text"] {
+    padding: 1.5vh 2vh;
+    /*margin: 2vh;*/
+    border: 2px solid #1ED760;
+    border-radius: 1vh;
+    font-size: 1.8vh;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input#playlist-url[type="text"]:focus {
+    border-color: #1db954;
+    box-shadow: 0 0 2vh rgba(30, 215, 96, 0.8);
+}
+
+.backup-input label {
+    position: absolute;
+    font-size: 3vh;
+    background-color: rgb(30, 215, 96);
+    padding: 2vh;
+    border-radius: 4vh;
+    width: 100%;
+    height: 8vh;
+    text-align: center;
+}
+
+.backup-input label:hover {
+    background-color: rgb(19, 137, 60);
+}
+
+.backup-input span {
+    position: absolute;
+    font-size: 2vh;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+/* files */
+
+/*.data-container {
+    display: grid;
+    place-items: center;
+    padding: 3vh 4vh;
+    grid-template-columns: 5fr 2fr 3fr; 
+    grid-template-rows: 6vh 6vh;
+    gap: 4vh; 
+    position: relative;
+}
+
+.data-div {
+    position: relative;
+    padding: 2vh;
+    grid-column: 1 / 3;
+}
+
+.data-div#playlist {
+    grid-row: 1;
+}
+
+.data-div#partial {
+    grid-row: 2;
+}
+
+span.input-title {
+    margin: 0;
+    font-size: 4vh;
+    text-align: left;
+
+    position: relative;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+span.input-status {
+    padding: 1.5vh;
+    font-size: 2vh;
+}*/
+
+/* submit playlist */
+
+/*input#playlist-url[type="text"] {
+  padding: 1.5vh 2vh;
+  border: 2px solid #1ED760;
+  border-radius: 1vh;
+  font-size: 1.8vh;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input#playlist-url[type="text"]:focus {
+  border-color: #1db954;
+  box-shadow: 0 0 1.5vh rgba(30, 215, 96, 0.6);
+}*/
+
+/* sub file div*/
+
+/*.file-button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.file-button label {
+    position: absolute;
+    font-size: 3vh;
+    background-color: rgb(30, 215, 96);
+    padding: 1vh;
+    border-radius: 4vh;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.file-button label:hover {
+    background-color: rgb(19, 137, 60);
+} */
+
+/* PLAY BUTTON */
+
+.play-button-div {
+    margin-top: 6vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 27vh;
+}
+
+.play-button-div h3 {
+    font-size: 6vh;
+    position: absolute;
+    margin: 0;
+}
+
+.play-button-div button {
+    position: absolute;
+    height: 10vh;
+    width: 20%;
+    top: 12vh;
+    
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; 
+    color: white;
+
+    font-size: 4vh;
+    border-radius: 5vh;
+    border-color: transparent;
+
+    background-color: rgb(30, 215, 96);
+}
+
+.play-button-div button:hover {
+    background-color: rgb(19, 137, 60);
+}

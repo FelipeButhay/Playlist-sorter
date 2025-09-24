@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What do you prefer? - End</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='end/end.css') }}">
+        <!--"{{ url_for('static', filename='end/end.css') }}"-->
+    </head>
+    <body>
+        <div class="title">
+            <span class="title-p" id="title1">You sorted you </span>
+            <span class="title-p" id="title2">PLAYLIST</span>
+        </div>
+        <div class="list-container">
+            <ol class="list">
+            </ol>
+        </div>
+        <a href="/end/download_as_txt">You can download here the sorted list as a .txt file</a>
+        <button class="convert" onclick="turnToPlaylist()">Convert to a PLAYLIST</button>
+        <span class="response"></span> 
+
+        <script>
+            window.SONGS = {{ sortedList|tojson }};
+        </script>
+        <script src="{{ url_for('static', filename='end/end.js') }}"></script>
+        <!--"{{ url_for('static', filename='end/end.js') }}"-->
+    </body>
+</html>

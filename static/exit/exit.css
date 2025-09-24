@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; 
+    color: white;
+    background-color: black;
+    margin: 0;
+    position: relative;
+}
+
+span {
+    position: absolute;
+    color: rgb(30, 215, 96);
+    font-size: 12vh;
+    width:100%;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+}
