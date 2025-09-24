@@ -1,4 +1,4 @@
-// Función que actualiza el span correspondiente
+// updates the span when a file is uploaded
 function setupFileInput(inputId, spanId) {
     const input = document.getElementById(inputId);
     const span = document.getElementById(spanId);
@@ -14,9 +14,9 @@ function setupFileInput(inputId, spanId) {
     });
 }
 
-// Configuramos todos los inputs de archivos
 setupFileInput("backup-file", "backup-filename");
 
+// manages the selector playlist | backup file
 const typeSelector = document.querySelector(".type-selector");
 playlist_selected = true;
 
@@ -45,4 +45,5 @@ typeSelector.addEventListener("click", () => {
     document.querySelector(".type-selector .selector").style.left = playlist_selected ? "0" : "50%";
 
     toggleInputs();
+
 });
